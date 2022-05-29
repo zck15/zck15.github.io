@@ -14,61 +14,41 @@ titles:
   zh-Hant : &ZH_HANT  關於
   zh-TW   : *ZH_HANT
   zh-HK   : *ZH_HANT
-  ko      : &KO       소개
-  ko-KR   : *KO
-  fr      : &FR       À propos
-  fr-BE   : *FR
-  fr-CA   : *FR
-  fr-CH   : *FR
-  fr-FR   : *FR
-  fr-LU   : *FR
+  ko      : *EN
+  ko-KR   : *EN
+  fr      : *EN
+  fr-BE   : *EN
+  fr-CA   : *EN
+  fr-CH   : *EN
+  fr-FR   : *EN
+  fr-LU   : *EN
   # @end locale config
 key: page-about
 ---
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
+# Cankun Zhao
 
-TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+<div class="grid-containre">
+<div class="grid grid--p-2">
+<div class="cell cell--12 cell--md-4 " markdown="1">
+![Image](./screenshots/CankunZhao.jpg){:.circle.shadow}
+</div>
+<div class="cell cell--12 cell--md-auto" markdown="1">
+    I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
+</div>
+</div>
+</div>
 
-```javascript
-(() => console.log('Hello, World!'))();
-```
+## My research
 
-## Features
+Hardware design, Post-Quantum Cryptography, Side-Channel Analysis.
 
-- Responsive
-- Semantic HTML
-- Skins
-- Highlight Theme
-- Internationalization
-- Search
-- Table of contents
-- Authors
-- Additional styles (alert, tag, image, icon, button, grid, etc)
-- Extensions (audios, videos, slides, demos)
-- Markdown enhancements ([MathJax](https://www.mathjax.org/), [mermaid](https://mermaidjs.github.io/), [chartjs](http://www.chartjs.org/))
-- Sharing ([AddToAny](https://www.addtoany.com/), [AddThis](https://www.addthis.com/))
-- Comments ([Disqus](https://disqus.com/), [Gitalk](https://gitalk.github.io/), [Valine](https://valine.js.org/en/))
-- Pageview ([LeanCloud](https://leancloud.cn/))
-- Analytics ([Google Analytics](https://analytics.google.com/analytics/web/))
-- RSS ([jekyll-feed](https://github.com/jekyll/jekyll-feed))
+## Publications
 
-## Skins
+1. [C. Zhao](https://zck15.github.io/about.html), N. Zhang, H. Wang, [B. Yang](https://orcid.org/0000-0002-5204-1707), W. Zhu, Z. Li, M. Zhu, S. Yin, S. Wei, and [L. Liu](https://orcid.org/0000-0001-7548-4116), "[A Compact and High-Performance Hardware Architecture for CRYSTALS-Dilithium](https://tches.iacr.org/index.php/TCHES/article/view/9297/8863)", *Transactions on Cryptographic Hardware and Embedded Systems* 2022(1), pp. 270–295, 2021.
 
-TeXt has 6 built-in skins, you can also set up your own skin.
+## Contact Information
 
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg) |
-
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
-
-### Highlight Theme
-
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
-
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
+- Email: zck19@mails.tsinghua.edu.cn
+- Address: FIT Building, Tsinghua University, Haidian, Beijing, China
+- Office: 4-404
