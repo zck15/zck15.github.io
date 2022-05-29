@@ -1,42 +1,12 @@
 ---
 layout: article
-titles:
-  # @start locale config
-  en      : &EN       About
-  en-GB   : *EN
-  en-US   : *EN
-  en-CA   : *EN
-  en-AU   : *EN
-  zh-Hans : &ZH_HANS  关于
-  zh      : *ZH_HANS
-  zh-CN   : *ZH_HANS
-  zh-SG   : *ZH_HANS
-  zh-Hant : &ZH_HANT  關於
-  zh-TW   : *ZH_HANT
-  zh-HK   : *ZH_HANT
-  ko      : *EN
-  ko-KR   : *EN
-  fr      : *EN
-  fr-BE   : *EN
-  fr-CA   : *EN
-  fr-CH   : *EN
-  fr-FR   : *EN
-  fr-LU   : *EN
-  # @end locale config
+title: Cankun Zhao
 key: page-about
 ---
 
-<div class="grid-containre">
-<div class="grid grid--p-2">
-<div class="cell cell--12 cell--md-4 " markdown="1">
 ![Image](https://github.com/zck15/zck15.github.io/raw/main/screenshots/CankunZhao.jpg){:.circle.shadow}
-</div>
-<div class="cell">
-    I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
-</div>
-</div>
-</div>
 
+I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
 
 ## My research
 
