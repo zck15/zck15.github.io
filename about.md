@@ -26,18 +26,17 @@ titles:
 key: page-about
 ---
 
-# Cankun Zhao
-
 <div class="grid-containre">
 <div class="grid grid--p-2">
 <div class="cell cell--12 cell--md-4 " markdown="1">
-![Image](./screenshots/CankunZhao.jpg){:.circle.shadow}
+![Image](https://github.com/zck15/zck15.github.io/raw/main/screenshots/CankunZhao.jpg){:.circle.shadow}
 </div>
-<div class="cell" markdown="1">
+<div class="cell">
     I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
 </div>
 </div>
 </div>
+
 
 ## My research
 
