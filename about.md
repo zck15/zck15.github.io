@@ -33,7 +33,7 @@ key: page-about
 <div class="cell cell--12 cell--md-4 " markdown="1">
 ![Image](./screenshots/CankunZhao.jpg){:.circle.shadow}
 </div>
-<div class="cell cell--12 cell--md-auto" markdown="1">
+<div class="cell" markdown="1">
     I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
 </div>
 </div>
