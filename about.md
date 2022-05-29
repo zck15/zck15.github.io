@@ -5,10 +5,10 @@ key: page-about
 ---
 
 <div class="grid">
-	<div class="cell cell--2">
+	<div class="cell cell--2" markdown="1">
 		![Image](https://github.com/zck15/zck15.github.io/raw/main/screenshots/CankunZhao.jpg){:.circle.shadow}
 	</div>
-	<div class="cell cell--auto">
+	<div class="cell cell--auto" markdown="1">
 		I was born in Shandong, China in 1997. I did my bachelor at Tsinghua University. I'm currently a PhD Student at School of Integrated Circuits, Tsinghua University.
 	</div>
 </div>
