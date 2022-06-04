@@ -80,8 +80,17 @@ t-PINI的电路是t-probing安全的
 
  [^CasSta20]文中还提出了MIMO-SNI的定义，该定义比PINI还要强（要求更严），t-MIMO-SNI的均满足t-PINI，详情见原文。
 
-## 参考文献
+## Robust Probing Model[^FGP18]
+
+如果要防护的功能是用硬件实现的，而非用软件实现，那么一些物理效应会导致额外的泄漏。比如，组合电路中会有glitch的现象，可能该中间变量本身与敏感信息无关，但是glitch是否出现与敏感信息有关。再比如，寄存器的功耗与相邻周期存储的值有关，而不仅仅与当前值有关。再比如，相邻的导线会有耦合效应，也可能导致泄漏。为了保证在这些情况下，仍然不出现泄漏，研究者提出了鲁棒探针模型。
+
+鲁棒探针模型通过扩展探针来描述物理效应的影响。为了保证glitch情况下的安全，每根探针，其前面组合逻辑所有相连的线上都放置上扩展探针，只有在所有这些探针都被探测的情况下，仍然是安全的，才说他是glitch-extended安全的。为了保证寄存器跳变不会带来泄漏，一个寄存器上的探针，对应前后两个周期的值扩展探针。为了保证线的耦合情况下不会有泄漏，一根线上的探针，对应与其耦合的线上的扩展探针。
+
+如果所有gadget的输出都存在寄存器里，所有gadget都是鲁棒安全的，那么可以遵从前面所述的组合构造方法。（但是这样可能会有较大的延迟）
+
+
 
 [^ISW03]: Y. Ishai, A. Sahai, and D. A. Wagner, “Private circuits: Securing hardware against probing attacks,” in Proc. CRYPTO, 2003, pp. 463–481.
 [^BBP16]: S. Belaïd, F. Benhamouda, A. Passelègue, E. Prouff, A. Thillard, and D. Vergnaud, “Randomness complexity of private circuits for multiplication,” in Proc. EUROCRYPT, 2016, pp. 616–648.
 [^CasSta20]: Gaëtan Cassiers and François-Xavier Standaert. 2020. Trivially and efficiently composing masked gadgets with probe isolating non-interference. IEEE Transactions on Information Forensics and Security 15 (2020), 2542–25
+[^FGP18]: S. Faust, V. Grosso, S. Merino Del Pozo, C. Paglialonga, and F.-X.  Standaert, “Composable Masking Schemes in the Presence of Physical  Defaults & the Robust Probing Model”, *TCHES*, vol. 2018, no. 3, pp. 89–120, Aug. 2018.
