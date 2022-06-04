@@ -20,7 +20,7 @@ tags: ["SCA", "Masking", "Summary"]
 
 然而，t阶探针安全的gadget，并不能保证组合成复杂电路时仍然是t阶探针安全的。若想要整体电路安全，仍然需要对整体电路进行复杂的分析。因此，为了研究如何更加方便的组合Gadget，研究者们提出了更多的模型与构造方法。
 
-## NI与SNI（Non-Interference & Strong Non-Interference）[^BBP+16]
+## NI与SNI（Non-Interference & Strong Non-Interference）[^BBP16]
 
 为了说明NI和SNI的定义，首先介绍一下**可仿真性**。
 
@@ -50,7 +50,7 @@ SNI刷新组件：输入一个变量，输出相同的变量，输出的share是
 
 构造一个t-NI的复杂电路的一个方法：所有组件都是t-NI的，且满足所有组件的输出以及所有输入只能连接一个非SNI刷新组件的输入。换句话，如果一个组件的输出需要在多个组件使用，只有一个可以直接用，其他的都需要经过SNI刷新组件reshare再使用。
 
-### 探针传播方法（Probe Propagation Framework）[^BBP+16][^CasSta20]
+### 探针传播方法（Probe Propagation Framework）[^BBP16] [^CasSta20]
 
 NI与SNI还可以使用传播探针的方法来定义和理解。
 
@@ -83,5 +83,5 @@ t-PINI的电路是t-probing安全的
 ## 参考文献
 
 [^ISW03]: Y. Ishai, A. Sahai, and D. A. Wagner, “Private circuits: Securing hardware against probing attacks,” in Proc. CRYPTO, 2003, pp. 463–481.
-[^BBP+16]: S. Belaïd, F. Benhamouda, A. Passelègue, E. Prouff, A. Thillard, and D. Vergnaud, “Randomness complexity of private circuits for multiplication,” in Proc. EUROCRYPT, 2016, pp. 616–648.
+[^BBP16]: S. Belaïd, F. Benhamouda, A. Passelègue, E. Prouff, A. Thillard, and D. Vergnaud, “Randomness complexity of private circuits for multiplication,” in Proc. EUROCRYPT, 2016, pp. 616–648.
 [^CasSta20]: Gaëtan Cassiers and François-Xavier Standaert. 2020. Trivially and efficiently composing masked gadgets with probe isolating non-interference. IEEE Transactions on Information Forensics and Security 15 (2020), 2542–25
