@@ -2,7 +2,7 @@
 title: Known Problems and Solutions in Bluespec SystemVerilog
 lang: zh
 tags: ["BSV", "Issues"]
-key: Known_Problems_and_Solutions_in_Bluespec_SystemVerilog
+key: KPNS_in_BSV
 ---
 
  本文总结了在硬件描述语言**Bluespec SystemVerilog (BSV)** 中的一些已知问题和解决方法。
@@ -32,7 +32,7 @@ key: Known_Problems_and_Solutions_in_Bluespec_SystemVerilog
   > - Solution:
   >   Change the ready signal of the method so that it does not overlap with the enable condition of the desired more urgent rule. This can usually be achieved by anding !p (where p is the explicit condition of the relevant rule) with the rest of the method’s ready signal.
 
-  意为：若想让**规则**比**方法**更紧急，即**方法**无法阻塞**规则**运行，可以在**方法**的条件中加上**规则**不执行的条件。即，若规则执行的条件为p，方法原本的调用条件为o，则将方法调用的条件更改为o&&p。
+  意为：若想让**规则**比**方法**更紧急，即**方法**无法阻塞**规则**运行，可以在**方法**的条件中加上**规则**不执行的条件。即，若规则执行的条件为`p`，方法原本的调用条件为`o`，则将方法调用的条件更改为`o && p`。
 
 ## 规则的命名
 
