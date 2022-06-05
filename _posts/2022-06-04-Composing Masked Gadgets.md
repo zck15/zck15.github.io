@@ -2,6 +2,7 @@
 title: Composing Masked Gadgets
 lang: zh
 tags: ["SCA", "Masking", "Summary"]
+key: Composing_Masked_Gadgets
 ---
 
 本文总结了如何用Gadgets安全地构建整体电路。
