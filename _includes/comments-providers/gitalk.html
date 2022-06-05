@@ -31,7 +31,7 @@
 				owner: '{{ site.comments.gitalk.owner }}',
 				admin: [{{ _admin }}],
 				id: '{{ page.key }}',
-				proxy: 'https://127.0.0.2:8011/get_access_token'
+				proxy: 'http://127.0.0.2:8011/get_access_token'
 			});
 			gitalk.render('js-gitalk-container');
 		});
