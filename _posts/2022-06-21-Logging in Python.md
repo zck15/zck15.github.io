@@ -46,7 +46,7 @@ logging.critical('This is a critical message')
 
 对应的输出为：
 
-```shell
+```
 WARNING:root:This is a warning message
 ERROR:root:This is an error message
 CRITICAL:root:This is a critical message
@@ -74,7 +74,7 @@ logging.basicConfig(level=logging.DEBUG)
 logging.debug('This will get logged')
 ```
 
-```shell
+```
 DEBUG:root:This will get logged
 ```
 
@@ -87,7 +87,7 @@ logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(level
 logging.warning('This will get logged to a file')
 ```
 
-```shell
+```
 root - ERROR - This will get logged to a file
 ```
 
@@ -108,7 +108,7 @@ logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
 logging.warning('This is a Warning')
 ```
 
-```shell
+```
 18472-WARNING-This is a Warning
 ```
 
@@ -121,7 +121,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 logging.info('Admin logged in')
 ```
 
-```shell
+```
 2018-07-11 20:12:06,288 - Admin logged in
 ```
 
@@ -134,7 +134,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:
 logging.warning('Admin logged out')
 ```
 
-```shell
+```
 12-Jul-18 20:53:19 - Admin logged out
 ```
 
@@ -178,7 +178,7 @@ except Exception as e:
   logging.error('Exception occurred', exc_info=True)
 ```
 
-```shell
+```
 ERROR:root:Exception occurred
 Traceback (most recent call last):
   File ".\logtest.py", line 7, in <module>
@@ -188,7 +188,7 @@ ZeroDivisionError: division by zero
 
 如果不将`exc_info`置为`True`，输出将只有：
 
-```shell
+```
 ERROR:root:Exception occurred
 ```
 
@@ -206,7 +206,7 @@ except Exception as e:
   logging.exception('Exception occurred')
 ```
 
-```shell
+```
 ERROR:root:Exception occurred
 Traceback (most recent call last):
   File ".\logtest.py", line 7, in <module>
@@ -225,7 +225,7 @@ logger = logging.getLogger('example_logger')
 logger.warning('This is a warning')
 ```
 
-```shell
+```
 This is a warning
 ```
 
@@ -278,14 +278,14 @@ logger.error('This is an error')
 
 在屏幕的输出为
 
-```shell
+```
 __main__ - WARNING - This is a warning
 __main__ - ERROR - This is an error
 ```
 
 在文件的输出为
 
-```shell
+```
 2018-08-03 16:12:21,723 - __main__ - ERROR - This is an error
 ```
 
@@ -297,7 +297,7 @@ import logging_example
 
 屏幕输出
 
-```shell
+```
 logging_example - WARNING - This is a warning
 logging_example - ERROR - This is an error
 ```
