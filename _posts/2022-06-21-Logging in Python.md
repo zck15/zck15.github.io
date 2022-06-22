@@ -426,3 +426,82 @@ with open('config.toml', 'r') as f:
 logger = logging.getLogger('logger1')
 ```
 
+## 实例及技巧
+
+### 编写库时的日志
+
+如果你正在编写一个将会在别处调用的库，最好为其使用单独的自定义logger，这样调用该库的人可以更方便的控制开启哪一部分的日志。
+
+如果是单文件的库，可以用`__name__`来作为logger的名字，即`logger = logging.getLogger(__name__)`。如果该库的文件名为`filea.py`，调用时`import filea`，对应的logger的名字就是`filea`。
+
+如果是多文件的库，最好用库的名称作为logger的名字。
+
+### 等级控制
+
+在自定义logger时，logger以及handler均可以设置输出等级。可以将这种设置看作过滤器或滤波器，结合一条日志的处理过程：
+$$
+logger\to handler\to files/stream
+$$
+可以知道，logger只会将高于`l_logger`的LogRecord发给handler，handler只会处理高于`l_handler`的LogRecord，其中`l_logger`, `l_handler`分别指logger和handler设置的等级。
+
+因此，对于一个logger和一个handler，只有等级高于等于两者的等级的日志记录才会被输出。
+
+### 一个例子
+
+本例中，我们在编写一个测试程序`test.py`，调用了自己编写的一个库`mypackage.py`，调用了一个第三方库`pyvisa`。现在我们希望将日志打印到文件中，用于debug。
+
+通过查看`pyvisa`库的源文件，可以知道该库中的logger名称为`pyvisa`。自己的库`mypackage.py`的logger名称为`mypackage`。测试程序`test.py`中的logger名称为`test`。
+
+在配置文件`log_config.toml`中，配置三个logger：
+
+```toml
+version   = 1
+[formatters.simple]
+format    = '%(name)s - %(levelname)s - %(message)s'
+[formatters.time]
+format    = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+[handlers.console]
+class     = 'logging.StreamHandler'
+level     = 'INFO'
+formatter = 'simple'
+[handlers.file]
+class     = 'logging.FileHandler'
+level     = 'DEBUG'
+formatter = 'time'
+filename  = 'testlog.log'
+mode      = 'w'
+[loggers.mypackage]
+level     = 'INFO'
+handlers  = ['console', 'file']
+propagate = 0
+[loggers.test]
+level     = 'INFO'
+handlers  = ['console']
+propagate = 0
+[loggers.pyvisa]
+level     = 'DEBUG'
+handlers  = ['file']
+propagate = 0
+```
+
+其中，设置了两种formatter，区别是是否包含时间信息；设置了两个handler，分别输出至控制台和文件中，因为控制台想用来观察实验进程是否正常，文件用来具体debug，因此等级分别设置为了`INFO`和`DEBUG`；对三个logger分别进行了配置，本例主要想观察pyvisa为何工作不正常，因此将pyvisa的logger的等级设置为了`DEBUG`，其余设置为了`INFO`。
+
+部分测试脚本文件`test.py`：
+
+```python
+import pyvisa
+import mypackage
+import logging
+import logging.config
+import rtoml
+
+with open('log_config.toml', 'r') as f:
+    config = rtoml.load(f)
+    logging.config.dictConfig(config)
+
+logger = logging.getLogger('test')
+
+# test
+logger.info('example info')
+```
+
