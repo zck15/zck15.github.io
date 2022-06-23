@@ -505,3 +505,24 @@ logger = logging.getLogger('test')
 logger.info('example info')
 ```
 
+### 发送邮件的配置例子
+
+```toml
+version   = 1
+[formatters.verbose]
+format    = '%(asctime)s - %(filename)s - %(module)s - %(funcName)s - %(lineno)d - [%(levelname)s] - %(message)s'
+[handlers.email]
+class     = 'logging.handlers.SMTPHandler'
+level     = 'CRITICAL'
+formatter = 'verbose'
+mailhost  ='smtp.126.com'
+fromaddr  ='abcd@126.com'
+toaddrs   =['abcd@126.com']
+subject   ='Critical Error!'
+credentials =['abcd@126.com', 'smtppassword']
+[loggers.test]
+level     = 'CRITICAL'
+handlers  = ['email']
+propagate = 0
+```
+
