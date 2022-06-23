@@ -5,8 +5,6 @@ tags: ["Changelog", "Tutorial"]
 key: Keep_a_Changelog
 ---
 
- 中文输入法RIME的配置方法。本文为笔者配置RIME的笔记，主要关于双拼的配置以及在双拼中输入符号的配置。
-
 如何撰写更新日志，参见[该网站](https://keepachangelog.com/zh-CN/1.0.0/)
 
 <!--more-->
