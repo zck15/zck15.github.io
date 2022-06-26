@@ -46,7 +46,7 @@ key: Run_KAT_for_LWC
 
 - 顶层名称设置`set TOP_LEVEL_NAME LWC_TB`不要修改
 
-- 修改rtl文件列表，可以参考原库中`.toml`文件中`[rtl]`的`sources`列表
+- 修改rtl文件列表（注释`# Set implementation files`后），可以参考原库中`.toml`文件中`[rtl]`的`sources`列表
 
   - vhdl文件放在`src_vhdl`的列表中，例如
 
@@ -58,7 +58,7 @@ key: Run_KAT_for_LWC
         "../src_rtl/xoodoo_globals.vhd"
         "$INTERFACE_REPO/data_piso.vhd"
         "$INTERFACE_REPO/data_sipo.vhd"
-	      "$INTERFACE_REPO/FIFO.vhd"
+        "$INTERFACE_REPO/FIFO.vhd"
         "$INTERFACE_REPO/key_piso.vhd"
         "$INTERFACE_REPO/NIST_LWAPI_pkg.vhd"
         "$INTERFACE_REPO/PreProcessor.vhd"
@@ -78,7 +78,7 @@ key: Run_KAT_for_LWC
     }]
     ```
   
-  - tb文件列表，修改为：
+  - tb文件列表`tb_vhdl`，修改为：
   
     ```tcl
     set tb_vhdl [subst {
