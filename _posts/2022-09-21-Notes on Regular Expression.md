@@ -13,6 +13,11 @@ key: Notes_on_Regular_Expression
 
 [toc]
 
+## 相关链接
+
+- 一个超强[教程](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
+- [在线练习平台](https://regex101.com/)
+
 ## 语法总结
 
 | 类型           | 语法     | 说明                                                        | 例子                                                       |
@@ -53,8 +58,3 @@ key: Notes_on_Regular_Expression
 [^a]: `\p{Z}` 匹配任意种类的空格和不可见的separator
 [^g]: 不加标志`g`只返回匹配的第一个结果，加`g`返回匹配的所有结果
 [^m]: 不加标志`m`时锚点只匹配全文的开始和结尾，加`m`匹配行首和行尾
-
-## 相关链接
-
-- 一个超强[教程](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
-- [在线练习平台](https://regex101.com/)
