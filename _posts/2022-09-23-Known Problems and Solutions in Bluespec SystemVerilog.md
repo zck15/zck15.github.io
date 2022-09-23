@@ -42,6 +42,13 @@ key: KPNS_in_BSV
   - **用for批量定义的规则**：如果用for定义了多个规则r（如：`for (Integer i=0; i<n; i=i+1) rule r; ... endrule`）。那么在调度属性中对应的名字分别为`r`, `r_1`, `r_2`, ...。
   - **`mkConnection`对应的规则**：`mkConnection`返回的接口是一个空接口，可以通过显式声明出这个接口来得到对应规则的命名。如声明`Empty e <- mkConnection(aGet, bPut);`，这样对应的规则名称为`e.mkConnectionGetPut`。
 
+## 握手信号
+
+- **问题描述：**如果让BSV自动生成方法的握手信号，那么他的工作方式是固定的：ready信号为方法调用的隐式条件，即如果不ready，这个方法永远不会被调用，又即必须先ready才能握手成功。如果使用他人写的Verilog模块，有可能握手的行为是要先valid有效，接收方才会置位ready，才能握手成功。
+- **解决方法：**此时不能把ready和valid写到同一个方法中了，需要把两者解耦，分在两个method中，然后调用时手动判断是否握手成功：
+  - 原本想要调用方法：`a.put(); state <= next_state;`
+  - 改为`a.put(); if (a.ready()) begin state <= next_state; end`
+
 ## 相关链接
 
 - [BSV中文教程](https://github.com/WangXuan95/BSV_Tutorial_cn) by [Xuan Wang](https://github.com/WangXuan95).
