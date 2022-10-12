@@ -77,6 +77,18 @@ authentication is used to gain access to some service)
 
 ## 名词解释
 
+### Nonce
+
+来源：https://pynacl.readthedocs.io/en/v0.3.0/secret/
+
+Nonce must **NEVER** be reused for a particular key. Reusing a nonce may give an attacker enough information to decrypt or forge other messages. A nonce is **not considered secret** and **may be freely transmitted or stored in plaintext** alongside the ciphertext.
+
+A nonce does **not need to be random or unpredictable**, nor does the method of generating them need to be secret. A nonce **could simply be a counter incremented** with each message encrypted, which can be useful in connection-oriented protocols to reject duplicate messages (“replay attacks”). A bidirectional connection could use the same key for both directions, as long as their nonces never overlap (e.g. one direction always sets the high bit to “1”, the other always sets it to “0”).
+
+If you use a counter-based nonce along with a key that is persisted from one session to another (e.g. saved to disk), you must store the counter along with the key, to avoid accidental nonce reuse on the next session. For this reason, many protocols derive a new key for each session, reset the counter to zero with each new key, and never store the derived key or the counter.
+
+### 名词列表
+
 | 名词                                                | 解释                                                         |
 | --------------------------------------------------- | ------------------------------------------------------------ |
 | Access control                                      | Restricts resource access to only authorized entities.       |
