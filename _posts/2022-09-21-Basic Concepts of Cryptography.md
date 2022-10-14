@@ -238,4 +238,6 @@ IV是用作密码算法的一个输入，用来提供算法的初始状态的
 
 - [NIST Recommendation for Key Management: Part 1 - General](https://www.nist.gov/publications/recommendation-key-management-part-1-general-1)
 
+- 图片来源：https://www.thesslstore.com/blog/block-cipher-vs-stream-cipher/
+
   
