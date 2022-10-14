@@ -53,10 +53,75 @@ authentication is used to gain access to some service)
 ### 对称密码算法 (Symmetric-Key Algorithms)
 
 - 加解密使用相同的密钥
-- 分组密码block cipher：每次处理的数据块大小相同
-- 流密码steam cipher：处理连续的数据
-- MAC：提供完整性和来源认证（因为只有知道密钥才能生成MAC）
-- Authenticated Encryption with Associated Data (AEAD): AEAD可以将密文与一个特定的相关数据绑定（注意，相关数据不是机密的，但AEAD可保证其完整性）；比如你有一个数据库，包含很多人的地址，人名被用作AD，地址被加密，AEAD保证攻击者不能把一个人的地址假装为其他人的地址
+
+#### 分组密码 (Block Cipher)
+
+分组密码**名称的由来**：每次只能加密固定大小的block
+
+基本的分组密码**工作方式**：把明文和密钥丢进cipher中运算，如下图所示：
+
+![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/basic-block-cipher.png)
+
+分组密码的**操作模式**：为了提供更强的安全性，或提供更多的安全服务（机密性、完整性等），block cipher常常要搭配一些[模式](https://csrc.nist.gov/projects/block-cipher-techniques/bcm)使用：ECB、CBC、CFB、OFB、CTR等
+
+#### 流密码 (Stream Cipher)
+
+流密码**名称的由来**：用一串keystream，将明文bit by bit加密
+
+基本的流密码**工作方式**：使用密钥key和nonce生成伪随机数序列keystream，然后将明文和keystream异或得到密文，如图所示：
+
+![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/basic-stream-cipher.png)
+
+#### 消息验证码 (Message Authentication Code, MAC)
+
+使用消息验证算法产生的，可以对消息进行**完整性检查**的一段校验码，产生和校验均需使用对称密钥
+
+通常，MAC用在共享相同密钥的两方间，用来认证(authenticate)两方传输的信息：
+
+- 由于密钥仅对方知道，所以可提供来源认证
+- MAC本身，可以提供消息的完整性认证
+
+##### 哈希消息验证码 (Keyed-Hash Message Authentication Code, HMAC)
+
+使用哈希算法构造的消息验证算法，用于产生消息验证码MAC
+
+[NIST标准](https://csrc.nist.gov/publications/detail/fips/198/1/final)中HMAC的构造方法：
+
+`MAC(text) = HMAC(K, text) = H((K0 ⊕ opad )|| H((K0 ⊕ ipad) || text))`
+
+Notations:
+
+- text： 消息，完整性保护的target
+- K：密钥
+- H()：哈希算法，输入块尺寸记为B，输出块尺寸记为L
+- K0：长度为B的密钥，由K得到的（若K长度小于B，0-padding；若大于B，先哈希再0-padding）
+- opad：常数，字节`\x5c`重复B次
+- ipad：常数，字节`\x36`重复B次
+
+#### 带相关数据的认证加密 (Authenticated Encryption with Associated Data, AEAD)
+
+AEAD提供多项功能：
+
+- 首先，他是加密算法，可以将明文加密为密文，提供机密性
+- 其次，他提供类似MAC的认证服务，输出TAG，认证来源及完整性
+- 然后，他可以将相关数据AD与加密的消息绑定，通过TAG认证整体的完整性（AD也不可被篡改）
+
+加密输入输出：
+
+- 输入：IV, key, AD, 明文
+- 输出：密文, TAG
+
+解密输入输出：
+
+- 输入：IV, key, AD, 密文, TAG
+- 输出：是否成功, [明文, 如果解密成功]
+
+相关数据AD：
+
+- 相关数据一般不认为是秘密的，可能会以明文的格式与消息的密文及TAG一同传输
+- AEAD不对AD进行加密，仅对AD进行认证
+
+[AEAD的分类](https://csrc.nist.gov/presentations/2020/classification-of-aead)
 
 ### 非对称密码算法 (Asymmetric-Key Algorithms)
 
@@ -79,13 +144,26 @@ authentication is used to gain access to some service)
 
 ### Nonce
 
-来源：https://pynacl.readthedocs.io/en/v0.3.0/secret/
+Nonce是一个只用一次的数，即，对于一个密钥来说，一个nonce的值不能重复使用
 
-Nonce must **NEVER** be reused for a particular key. Reusing a nonce may give an attacker enough information to decrypt or forge other messages. A nonce is **not considered secret** and **may be freely transmitted or stored in plaintext** alongside the ciphertext.
+- 保证用相同的密钥加密相同的明文结果不同
+- 一般不认为是秘密的，可以以明文传输
+- 一般不需要随机或不可预测，可以用简单的计数器
 
-A nonce does **not need to be random or unpredictable**, nor does the method of generating them need to be secret. A nonce **could simply be a counter incremented** with each message encrypted, which can be useful in connection-oriented protocols to reject duplicate messages (“replay attacks”). A bidirectional connection could use the same key for both directions, as long as their nonces never overlap (e.g. one direction always sets the high bit to “1”, the other always sets it to “0”).
+> Nonce must **NEVER** be **reused** for **a particular key**. Reusing a nonce may give an attacker enough information to decrypt or forge other messages. A nonce is **not considered secret** and **may be freely transmitted or stored in plaintext** alongside the ciphertext.
+>
+> A nonce does **not need to be random or unpredictable**, nor does the method of generating them need to be secret. A nonce **could simply be a counter incremented** with each message encrypted, which can be useful in connection-oriented protocols to reject duplicate messages (“replay attacks”). A bidirectional connection could use the same key for both directions, as long as their nonces never overlap (e.g. one direction always sets the high bit to “1”, the other always sets it to “0”).
+>
+> If you use a counter-based nonce along with a key that is persisted from one session to another (e.g. saved to disk), you must store the counter along with the key, to avoid accidental nonce reuse on the next session. For this reason, many protocols derive a new key for each session, reset the counter to zero with each new key, and never store the derived key or the counter.
+>
+> 来源：https://pynacl.readthedocs.io/en/v0.3.0/secret/
 
-If you use a counter-based nonce along with a key that is persisted from one session to another (e.g. saved to disk), you must store the counter along with the key, to avoid accidental nonce reuse on the next session. For this reason, many protocols derive a new key for each session, reset the counter to zero with each new key, and never store the derived key or the counter.
+### Initialization Vector (IV)
+
+IV是用作密码算法的一个输入，用来提供算法的初始状态的
+
+- 不同算法对IV的要求不同，有的要求随机和不可预测，有的则不需要；有的要求保密，有的认为公开
+- 有的算法使用Nonce作为IV；有的算法需要真随机数或伪随机数作为IV
 
 ### 名词列表
 
