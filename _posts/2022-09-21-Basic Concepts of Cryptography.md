@@ -62,7 +62,49 @@ authentication is used to gain access to some service)
 
 ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/basic-block-cipher.png)
 
-分组密码的**操作模式**：为了提供更强的安全性，或提供更多的安全服务（机密性、完整性等），block cipher常常要搭配一些[模式](https://csrc.nist.gov/projects/block-cipher-techniques/bcm)使用：ECB、CBC、CFB、OFB、CTR等
+分组密码的**操作模式**：为了提供更强的安全性，或提供更多的安全服务（机密性、完整性等），block cipher常常要搭配一些[模式](https://csrc.nist.gov/projects/block-cipher-techniques/bcm)使用：
+
+- 电子密码本 (Electronic Codebook, ECB) 模式
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ecb-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ecb-dec.png)
+
+- 密码块链(Cipher Block Chaining, CBC) 模式
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-cbc-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-cbc-dec.png)
+
+- Propagating cipher block chaining (PCBC)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-pcbc-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-pcbc-dec.png)
+
+- 密码反馈 (Cipher Feedback, CFB) 模式
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-cfb-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-cfb-dec.png)
+
+- 输出反馈 (Output Feedback, OFB) 模式
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ofb-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ofb-dec.png)
+
+  将分组密码转换为流密码
+
+- 计数器 (Counter, CTR) 模式
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ctr-enc.png)
+
+  ![](https://github.com/zck15/zck15.github.io/raw/main/screenshots/block-cipher-ctr-dec.png)
+
+  将分组密码转换为流密码
+
+- 其他模式：AEAD模式：extended cipher block chaining (XCBC), integrity-aware cipher block chaining (IACBC), [integrity-aware parallelizable mode](https://en.m.wikipedia.org/wiki/IAPM_(mode)) (IAPM), [OCB](https://en.m.wikipedia.org/wiki/OCB_mode), [EAX](https://en.m.wikipedia.org/wiki/EAX_mode), [CWC](https://en.m.wikipedia.org/wiki/CWC_mode), [CCM](https://en.m.wikipedia.org/wiki/CCM_mode), and [GCM](https://en.m.wikipedia.org/wiki/Galois/counter_mode)
 
 #### 流密码 (Stream Cipher)
 
@@ -238,6 +280,10 @@ IV是用作密码算法的一个输入，用来提供算法的初始状态的
 
 - [NIST Recommendation for Key Management: Part 1 - General](https://www.nist.gov/publications/recommendation-key-management-part-1-general-1)
 
-- 图片来源：https://www.thesslstore.com/blog/block-cipher-vs-stream-cipher/
+- 图片来源：
 
+  - https://www.thesslstore.com/blog/block-cipher-vs-stream-cipher/
+  - https://en.m.wikipedia.org/wiki/Block_cipher_mode_of_operation
+  
+  
   
