@@ -37,3 +37,4 @@ Hardware design, Post-Quantum Cryptography, Side-Channel Analysis.
 - Email: zck22@mails.tsinghua.edu.cn
 - Address: FIT Building, Tsinghua University, Haidian, Beijing, China
 - Office: 4-404
+- PGP key: [EC6557E051664C7F](<https://github.com/zck15/zck15.github.io/raw/main/Cankun Zhao_0x51664C7F_public.asc>)
