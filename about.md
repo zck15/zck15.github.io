@@ -10,10 +10,11 @@ key: page-about
   </div>
   <div class="item__content">
     <div class="item__description">
-      <p>I was born in Shandong, China, in 1997. I earned my Bachelor's degree from Tsinghua University in 2019 and have since been pursuing a Ph.D. at the School of Integrated Circuits, Tsinghua University.</p>
+      <p>I was born in Shandong, China, in 1997. I earned my Bachelor's degree from Tsinghua University in 2019 and my Ph.D. degree from the School of Integrated Circuits, Tsinghua University, in 2025. I am currently a postdoctoral researcher at the School of Integrated Circuits, Tsinghua University.</p>
     </div>
   </div>
 </div>
+
 
 
 ## Research Interests
@@ -32,11 +33,13 @@ My research interests include:
 
 2. [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Hang Zhao, Jiangxue Liu, Bohan Yang, Wenping Zhu, Shuying Yin, Min Zhu, Shaojun Wei, and Leibo Liu, "[Breaking Ground: A New Area Record for Low-Latency First-Order Masked SHA-3](https://tches.iacr.org/index.php/TCHES/article/view/11790)", *IACR Transactions on Cryptographic Hardware and Embedded Systems (**TCHES**)* 2024(4), pp. 231-257, 2024.
 
-3. Jiangxue Liu, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Shuohang Peng, Bohan Yang, Hang Zhao, Xiangdong Han, Min Zhu, Shaojun Wei, and Leibo Liu, "[A Low-Latency High-Order Arithmetic to Boolean Masking Conversion](https://doi.org/10.46586/tches.v2024.i2.630-653)", *IACR Transactions on Cryptographic Hardware and Embedded Systems (**TCHES**)* 2024(2), pp. 630–653, 2024.
+3. [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Hanyue Shui, Bohan Yang, Wenping Zhu, Yuluan Cao, Zhang Hou, Yuqi Liu, Xiangdong Han, Shuying Yin, Weinan Chen, Hanning Wang, Jinjiang Yang, Min Zhu, Aoyang Zhang, Leibo Liu, "", ISSCC, 2026.
 
-4. Hang Zhao, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Wenping Zhu, Bohan Yang, Shaojun Wei, and Leibo Liu, "[Sparse Polynomial Multiplication-Based High-Performance Hardware Implementation for CRYSTALS-Dilithium](https://doi.org/10.1109/HOST55342.2024.10545379)", *IEEE International Symposium on Hardware Oriented Security and Trust (**HOST**)* 2024, pp. 150-159, 2024.
+4. Jiangxue Liu, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Shuohang Peng, Bohan Yang, Hang Zhao, Xiangdong Han, Min Zhu, Shaojun Wei, and Leibo Liu, "[A Low-Latency High-Order Arithmetic to Boolean Masking Conversion](https://doi.org/10.46586/tches.v2024.i2.630-653)", *IACR Transactions on Cryptographic Hardware and Embedded Systems (**TCHES**)* 2024(2), pp. 630–653, 2024.
 
-5. Shuohang Peng, Bohan Yang, Shuying Yin, Hang Zhao, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Shaojun Wei, and Leibo Liu, "[A Low-Randomness First-Order Masked Xoodyak](https://doi.org/10.1109/HOST55118.2023.10133290)", *IEEE International Symposium on Hardware Oriented Security and Trust (**HOST**)* 2023, pp. 48-56, 2023.
+5. Hang Zhao, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Wenping Zhu, Bohan Yang, Shaojun Wei, and Leibo Liu, "[Sparse Polynomial Multiplication-Based High-Performance Hardware Implementation for CRYSTALS-Dilithium](https://doi.org/10.1109/HOST55342.2024.10545379)", *IEEE International Symposium on Hardware Oriented Security and Trust (**HOST**)* 2024, pp. 150-159, 2024.
+
+6. Shuohang Peng, Bohan Yang, Shuying Yin, Hang Zhao, [Cankun Zhao](https://orcid.org/0000-0002-6875-3557), Shaojun Wei, and Leibo Liu, "[A Low-Randomness First-Order Masked Xoodyak](https://doi.org/10.1109/HOST55118.2023.10133290)", *IEEE International Symposium on Hardware Oriented Security and Trust (**HOST**)* 2023, pp. 48-56, 2023.
 
 ## Project Involvement
 - Participated in the [NIST LWC](https://csrc.nist.gov/projects/lightweight-cryptography) [side-channel evaluation project](https://cryptography.gmu.edu/athena/index.php?id=LWC), initiated by George Mason University (GMU). I contributed to the design of side-channel protected [hardware](https://cryptography.gmu.edu/athena/LWC/LWC_Finalists_protected_HW_implementations.html) and [software](https://cryptography.gmu.edu/athena/LWC/LWC_Finalists_protected_SW_implementations.html) implementations of Xoodyak. Additionally, I evaluated multiple [side-channel protected hardware implementations](https://cryptography.gmu.edu/athena/LWC/Lab_Implementation_Matching_HW.html). The designs and evaluations contributed to the [NIST LWC Final Report](https://csrc.nist.gov/pubs/ir/8454/final) and the [GMU Evaluation Report](https://cryptography.gmu.edu/athena/LWC/SCA_Evaluation_and_Benchmarking_of_LWC_Finalists_LWC_Workshop_2023.pdf).

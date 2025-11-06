@@ -77,3 +77,7 @@ key: BO
     - 测试向量存储所用bytes；串口传输所用bytes；内存存储所用bytes；
     - 不同用途的bytes和原始变量对应的关系可能不同（有的大端有的小端）
     - 直接把一个用途的bytes，挪作他用是危险的（不同用途的字节序可能不同）
+
+例子：
+
+- [Cryptographic Algorithm Validation Program | CSRC](https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/Secure-Hashing#sha3vsha3vss)下载的测试向量，hex对应的bytes是小端，即最前面的一个字节是LSB
