@@ -10,7 +10,7 @@ key: page-about
   </div>
   <div class="item__content">
     <div class="item__description">
-      <p>I was born in Shandong, China, in 1997. I earned my Bachelor's degree from Tsinghua University in 2019 and my Ph.D. degree from the School of Integrated Circuits, Tsinghua University, in 2025. I am currently a postdoctoral researcher at the School of Integrated Circuits, Tsinghua University.</p>
+      <p>I was born in Shandong, China, in 1997. I earned my Bachelor's degree from Tsinghua University in 2019 and my Ph.D. degree from the School of Integrated Circuits, Tsinghua University, in 2025. I am currently a Shuimu Tsinghua Scholar (Postdoctoral Researcher) at the School of Integrated Circuits, Tsinghua University.</p>
     </div>
   </div>
 </div>
